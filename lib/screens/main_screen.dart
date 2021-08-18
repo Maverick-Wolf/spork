@@ -7,63 +7,50 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   List<Widget> _list = [];
-  String value = "";
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _list = [
-      Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height / 4,
-          color: Colors.white,
+    addTextField() {
+      return Padding(
+        padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
+        child: TextField(
+          style: TextStyle(color: Colors.white, fontSize: 14.0),
+          cursorColor: Colors.white,
+          autofocus: true,
+          onSubmitted: (value) {
+            setState(() {
+              if (value == "test") {
+                _list.add(
+                  Text(
+                    "test message was typed",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                );
+              }
+              _list.add(addTextField());
+            });
+          },
+          decoration: InputDecoration(
+              border: InputBorder.none,
+              focusedBorder: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              errorBorder: InputBorder.none,
+              disabledBorder: InputBorder.none,
+              prefixText: "code@never:~# ",
+              prefixStyle: TextStyle(
+                  color: Color(0xFF008C23), fontWeight: FontWeight.w500)),
         ),
-      ),
-    ];
+      );
+    }
+
+    _list.add(addTextField());
   }
 
   @override
   Widget build(BuildContext context) {
-    Widget _container = Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height / 4,
-        color: Colors.white,
-      ),
-    );
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            TextButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.black87)),
-              child: Text("Add new container"),
-              onPressed: () {
-                setState(() {
-                  _list.add(_container);
-                });
-              },
-            ),
-            TextButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.black87)),
-              child: Text("Clear"),
-              onPressed: () {
-                setState(() {
-                  _list = [];
-                  _list.add(_container);
-                });
-              },
-            ),
-          ],
-        ),
-      ),
       body: Center(
         child: Container(
           decoration: BoxDecoration(
@@ -111,23 +98,8 @@ class _MainScreenState extends State<MainScreen> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(
-                    children: [
-                      TextField(
-                        style: TextStyle(color: Colors.white, fontSize: 14.0),
-                        cursorColor: Colors.white,
-                        autofocus: true,
-                        decoration: InputDecoration(
-                            border: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            disabledBorder: InputBorder.none,
-                            prefixText: "code@never:~# ",
-                            prefixStyle: TextStyle(
-                                color: Color(0xFF008C23),
-                                fontWeight: FontWeight.w500)),
-                      ),
-                    ],
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: _list,
                   ),
                 ),
               ),
