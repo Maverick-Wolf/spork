@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spork/helpers/about.dart';
+import 'package:spork/helpers/contact.dart';
 import 'package:spork/helpers/help.dart';
 
 class MainScreen extends StatefulWidget {
@@ -15,6 +16,8 @@ class _MainScreenState extends State<MainScreen> {
       text = Help();
     } else if (value.toLowerCase() == "about") {
       text = About();
+    } else if (value.toLowerCase() == "contact") {
+      text = Contact();
     } else {
       text = Padding(
         padding: const EdgeInsets.fromLTRB(13.0, 0.0, 0.0, 0.0),
@@ -27,57 +30,57 @@ class _MainScreenState extends State<MainScreen> {
     return text;
   }
 
-  final _textController = TextEditingController();
+  addTextField() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
+      child: TextField(
+        key: UniqueKey(),
+        style: TextStyle(color: Colors.white, fontSize: 14.0),
+        cursorColor: Colors.white70,
+        cursorHeight: 18.0,
+        autofocus: true,
+        showCursor: true,
+        onSubmitted: (value) {
+          Widget text = outputText(value);
+          setState(() {
+            if (value.toLowerCase() == "clear") {
+              _list.clear();
+            } else {
+              _list.add(text);
+            }
+            _list.add(addTextField());
+          });
+        },
+        decoration: InputDecoration(
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
+            prefixIcon: Padding(
+                padding: EdgeInsets.all(7.5),
+                child: Text(
+                  'code@never:~# ',
+                  style: TextStyle(color: Color(0xFF00CD00)),
+                ))),
+      ),
+    );
+  }
+
   @override
   void initState() {
     super.initState();
-    addTextField() {
-      return Padding(
-        padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
-        child: TextField(
-          style: TextStyle(color: Colors.white, fontSize: 14.0),
-          cursorColor: Colors.white,
-          autofocus: true,
-          onSubmitted: (value) {
-            Widget text = outputText(value);
-            setState(() {
-              if (value.toLowerCase() == "clear") {
-                _list.clear();
-              } else {
-                _list.add(text);
-              }
-              _list.add(addTextField());
-            });
-          },
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              focusedBorder: InputBorder.none,
-              enabledBorder: InputBorder.none,
-              errorBorder: InputBorder.none,
-              disabledBorder: InputBorder.none,
-              // prefixText: "code@never:~# ",
-              // prefixStyle: TextStyle(
-              //     color: Color(0xFF008C23), fontWeight: FontWeight.w500)
-              prefixIcon: Padding(
-                  padding: EdgeInsets.all(7.5),
-                  child: Text(
-                    'code@never:~# ',
-                    style: TextStyle(color: Color(0xFF00CD00)),
-                  ))),
-        ),
-      );
-    }
-
     _list.add(addTextField());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.grey[900],
       body: Center(
         child: Container(
           decoration: BoxDecoration(
+              color: Colors.black,
               border: Border.all(color: Color(0xFF68768A), width: 1.4)),
           width: MediaQuery.of(context).size.width * 0.8,
           height: MediaQuery.of(context).size.width * 0.45,

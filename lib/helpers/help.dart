@@ -48,6 +48,15 @@ class Help extends StatelessWidget {
                       "\n   - Ahh so now you wanna become a greate wizard like me?",
                   style: TextStyle(color: Colors.white)),
               TextSpan(
+                text: "\n\nall",
+                style: TextStyle(
+                  color: Color(0xFF4E5CFF),
+                ),
+              ),
+              TextSpan(
+                  text: "\n   - Tell me everything",
+                  style: TextStyle(color: Colors.white)),
+              TextSpan(
                 text: "\n\ncontact",
                 style: TextStyle(
                   color: Color(0xFF4E5CFF),
