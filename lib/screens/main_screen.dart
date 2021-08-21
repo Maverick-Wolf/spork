@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spork/helpers/about.dart';
+import 'package:spork/helpers/help.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -10,25 +12,22 @@ class _MainScreenState extends State<MainScreen> {
   outputText(String value) {
     Widget text;
     if (value.toLowerCase() == "help") {
-      text = Padding(
-        padding: const EdgeInsets.fromLTRB(30.0, 0.0, 0.0, 0.0),
-        child: Text(
-          "about\n    - Stop stalking me\n\nskills\n    - Learn to know about all the magical powers i posses\n\nprojects\n    - See all the potions i have made using my magical powers\n\neducation\n    - Learn about the wizidary schools i went to\n\ncontact\n    - Let the spam begin",
-          style: TextStyle(color: Colors.white),
-        ),
-      );
+      text = Help();
+    } else if (value.toLowerCase() == "about") {
+      text = About();
     } else {
       text = Padding(
-        padding: const EdgeInsets.fromLTRB(30.0, 0.0, 0.0, 0.0),
+        padding: const EdgeInsets.fromLTRB(13.0, 0.0, 0.0, 0.0),
         child: Text(
-          "No a valid input",
-          style: TextStyle(color: Colors.white),
+          "Command not found: $value.",
+          style: TextStyle(color: Colors.red[600]),
         ),
       );
     }
     return text;
   }
 
+  final _textController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -39,16 +38,15 @@ class _MainScreenState extends State<MainScreen> {
           style: TextStyle(color: Colors.white, fontSize: 14.0),
           cursorColor: Colors.white,
           autofocus: true,
-          onSubmitted: (value) async {
-            Widget text = await outputText(value);
+          onSubmitted: (value) {
+            Widget text = outputText(value);
             setState(() {
               if (value.toLowerCase() == "clear") {
                 _list.clear();
-                _list.add(addTextField());
               } else {
                 _list.add(text);
-                _list.add(addTextField());
               }
+              _list.add(addTextField());
             });
           },
           decoration: InputDecoration(
@@ -64,7 +62,7 @@ class _MainScreenState extends State<MainScreen> {
                   padding: EdgeInsets.all(7.5),
                   child: Text(
                     'code@never:~# ',
-                    style: TextStyle(color: Color(0xFF008C23)),
+                    style: TextStyle(color: Color(0xFF00CD00)),
                   ))),
         ),
       );
