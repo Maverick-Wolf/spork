@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:spork/helpers/about.dart';
 import 'package:spork/helpers/contact.dart';
+import 'package:spork/helpers/education.dart';
 import 'package:spork/helpers/help.dart';
+import 'package:spork/helpers/projects.dart';
+import 'package:spork/helpers/skills.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -12,12 +15,18 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> _list = [];
   outputText(String value) {
     Widget text;
-    if (value.toLowerCase() == "help") {
+    if (value.toLowerCase().trim() == "help") {
       text = Help();
-    } else if (value.toLowerCase() == "about") {
+    } else if (value.toLowerCase().trim() == "about") {
       text = About();
-    } else if (value.toLowerCase() == "contact") {
+    } else if (value.toLowerCase().trim() == "contact") {
       text = Contact();
+    } else if (value.toLowerCase().trim() == "education") {
+      text = Education();
+    } else if (value.toLowerCase().trim() == "projects") {
+      text = Projects();
+    } else if (value.toLowerCase().trim() == "skills") {
+      text = Skills();
     } else {
       text = Padding(
         padding: const EdgeInsets.fromLTRB(13.0, 0.0, 0.0, 0.0),
@@ -43,7 +52,7 @@ class _MainScreenState extends State<MainScreen> {
         onSubmitted: (value) {
           Widget text = outputText(value);
           setState(() {
-            if (value.toLowerCase() == "clear") {
+            if (value.toLowerCase().trim() == "clear") {
               _list.clear();
             } else {
               _list.add(text);
@@ -76,67 +85,12 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
-      body: Center(
-        child: Container(
-          decoration: BoxDecoration(
-              color: Colors.black,
-              border: Border.all(color: Color(0xFF68768A), width: 1.4)),
-          width: MediaQuery.of(context).size.width * 0.8,
-          height: MediaQuery.of(context).size.width * 0.45,
-          child: Column(
-            children: [
-              Container(
-                color: Color(0xFF68768A),
-                height: 32.0,
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: Row(
-                  children: [
-                    Image(
-                      image: AssetImage('assets/cmd.png'),
-                      height: 27.0,
-                      width: 27.0,
-                    ),
-                    Text(
-                      "C:\\WINDOWS\\system32\\portfolio.exe",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Spacer(),
-                    Icon(
-                      Icons.horizontal_rule_sharp,
-                      color: Colors.white,
-                      size: 22.0,
-                    ),
-                    SizedBox(
-                      width: 27.0,
-                    ),
-                    Icon(
-                      Icons.crop_square_sharp,
-                      color: Colors.white,
-                      size: 22.1,
-                    ),
-                    SizedBox(
-                      width: 27.0,
-                    ),
-                    Icon(
-                      Icons.clear,
-                      color: Colors.white,
-                      size: 24.0,
-                    )
-                  ],
-                ),
-              ),
-              Expanded(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: _list,
-                  ),
-                ),
-              ),
-            ],
-          ),
+      backgroundColor: Colors.black,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: _list,
         ),
       ),
     );

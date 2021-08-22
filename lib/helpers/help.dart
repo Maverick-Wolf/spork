@@ -47,15 +47,15 @@ class Help extends StatelessWidget {
                   text:
                       "\n   - Ahh so now you wanna become a greate wizard like me?",
                   style: TextStyle(color: Colors.white)),
-              TextSpan(
-                text: "\n\nall",
-                style: TextStyle(
-                  color: Color(0xFF4E5CFF),
-                ),
-              ),
-              TextSpan(
-                  text: "\n   - Tell me everything",
-                  style: TextStyle(color: Colors.white)),
+              // TextSpan(
+              //   text: "\n\nall",
+              //   style: TextStyle(
+              //     color: Color(0xFF4E5CFF),
+              //   ),
+              // ),
+              // TextSpan(
+              //     text: "\n   - Tell me everything",
+              //     style: TextStyle(color: Colors.white)),
               TextSpan(
                 text: "\n\ncontact",
                 style: TextStyle(
@@ -64,6 +64,15 @@ class Help extends StatelessWidget {
               ),
               TextSpan(
                   text: "\n   - Let the spam begin",
+                  style: TextStyle(color: Colors.white)),
+              TextSpan(
+                text: "\n\nclear",
+                style: TextStyle(
+                  color: Color(0xFF4E5CFF),
+                ),
+              ),
+              TextSpan(
+                  text: "\n   - Clears all the output on the terminal",
                   style: TextStyle(color: Colors.white)),
             ]),
       ),
