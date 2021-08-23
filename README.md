@@ -1,16 +1,13 @@
 # spork
 
-A new Flutter project.
++ A personal portfolio website made using Flutter and has its UI/UX insipred from terminal/command line
 
-## Getting Started
+## About
++ You can find the live hosted version of website here -> [Link](https://maverick-wolf.github.io/spork)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### What all i learned
++ Learned how to use keys in widget
++ Learned about the lifeCycle of widgets and how to force restart it
++ Learned alot about TextFields
++ First time used recursion for widgets
++ Learned a little more about state management
