@@ -11,42 +11,66 @@ class Help extends StatelessWidget {
         text: TextSpan(
             text: "about",
             style: TextStyle(
-              color: Color(0xFF4E5CFF),
-            ),
+                color: Color(0xFF4E5CFF),
+                fontSize: 16.0,
+                fontFamily: "Cour",
+                fontWeight: FontWeight.w600),
             children: [
               TextSpan(
                   text: "\n   - Stop stalking me",
-                  style: TextStyle(color: Colors.white)),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontFamily: "Cour",
+                      fontWeight: FontWeight.normal)),
               TextSpan(
                 text: "\n\nskills",
                 style: TextStyle(
-                  color: Color(0xFF4E5CFF),
-                ),
+                    color: Color(0xFF4E5CFF),
+                    fontSize: 16.0,
+                    fontFamily: "Cour",
+                    fontWeight: FontWeight.w600),
               ),
               TextSpan(
                   text:
                       "\n   - Get to know about all the magical powers i posses",
-                  style: TextStyle(color: Colors.white)),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontFamily: "Cour",
+                      fontWeight: FontWeight.normal)),
               TextSpan(
                 text: "\n\nprojects",
                 style: TextStyle(
-                  color: Color(0xFF4E5CFF),
-                ),
+                    color: Color(0xFF4E5CFF),
+                    fontSize: 16.0,
+                    fontFamily: "Cour",
+                    fontWeight: FontWeight.w600),
               ),
               TextSpan(
                   text:
                       "\n   - See all the potions i have made using my magical powers",
-                  style: TextStyle(color: Colors.white)),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontFamily: "Cour",
+                      fontWeight: FontWeight.normal)),
               TextSpan(
                 text: "\n\neducation",
                 style: TextStyle(
-                  color: Color(0xFF4E5CFF),
-                ),
+                    color: Color(0xFF4E5CFF),
+                    fontSize: 16.0,
+                    fontFamily: "Cour",
+                    fontWeight: FontWeight.w600),
               ),
               TextSpan(
                   text:
                       "\n   - Ahh so now you wanna become a greate wizard like me?",
-                  style: TextStyle(color: Colors.white)),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontFamily: "Cour",
+                      fontWeight: FontWeight.normal)),
               // TextSpan(
               //   text: "\n\nall",
               //   style: TextStyle(
@@ -59,21 +83,33 @@ class Help extends StatelessWidget {
               TextSpan(
                 text: "\n\ncontact",
                 style: TextStyle(
-                  color: Color(0xFF4E5CFF),
-                ),
+                    color: Color(0xFF4E5CFF),
+                    fontSize: 16.0,
+                    fontFamily: "Cour",
+                    fontWeight: FontWeight.w600),
               ),
               TextSpan(
                   text: "\n   - Let the spam begin",
-                  style: TextStyle(color: Colors.white)),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontFamily: "Cour",
+                      fontWeight: FontWeight.normal)),
               TextSpan(
                 text: "\n\nclear",
                 style: TextStyle(
-                  color: Color(0xFF4E5CFF),
-                ),
+                    color: Color(0xFF4E5CFF),
+                    fontSize: 16.0,
+                    fontFamily: "Cour",
+                    fontWeight: FontWeight.w600),
               ),
               TextSpan(
                   text: "\n   - Clears all the output on the terminal",
-                  style: TextStyle(color: Colors.white)),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontFamily: "Cour",
+                      fontWeight: FontWeight.normal)),
             ]),
       ),
     );

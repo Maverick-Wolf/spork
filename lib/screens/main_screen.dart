@@ -30,10 +30,11 @@ class _MainScreenState extends State<MainScreen> {
     } else {
       text = Padding(
         padding: const EdgeInsets.fromLTRB(13.0, 0.0, 0.0, 0.0),
-        child: Text(
-          "Command not found: $value.",
-          style: TextStyle(color: Colors.red[600]),
-        ),
+        child: Text("Command not found: $value.",
+            style: TextStyle(
+                color: Colors.red[600],
+                fontSize: 16.0,
+                fontWeight: FontWeight.w600)),
       );
     }
     return text;
@@ -44,7 +45,7 @@ class _MainScreenState extends State<MainScreen> {
       padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
       child: TextField(
         key: UniqueKey(),
-        style: TextStyle(color: Colors.white, fontSize: 14.0),
+        style: TextStyle(color: Colors.white, fontSize: 16.0),
         cursorColor: Colors.white70,
         cursorHeight: 18.0,
         autofocus: true,
@@ -70,7 +71,7 @@ class _MainScreenState extends State<MainScreen> {
                 padding: EdgeInsets.all(7.5),
                 child: Text(
                   'code@never:~# ',
-                  style: TextStyle(color: Color(0xFF00CD00)),
+                  style: TextStyle(color: Color(0xFF00CD00), fontSize: 16.0),
                 ))),
       ),
     );
