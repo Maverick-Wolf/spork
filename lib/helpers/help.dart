@@ -9,13 +9,22 @@ class Help extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(13.0, 0.0, 0.0, 0.0),
       child: RichText(
         text: TextSpan(
-            text: "about",
+            text:
+                "Wow, I thought the only people who would visit this site would be bots and spammers, guess I was wrong. Just type any of the commands below to get some more info.",
             style: TextStyle(
-                color: Color(0xFF4E5CFF),
+                color: Colors.white,
                 fontSize: 16.0,
                 fontFamily: "Cour",
-                fontWeight: FontWeight.w600),
+                fontWeight: FontWeight.normal),
             children: [
+              TextSpan(
+                text: "\n\nabout",
+                style: TextStyle(
+                    color: Color(0xFF4E5CFF),
+                    fontSize: 16.0,
+                    fontFamily: "Cour",
+                    fontWeight: FontWeight.w600),
+              ),
               TextSpan(
                   text: "\n   - Stop stalking me",
                   style: TextStyle(

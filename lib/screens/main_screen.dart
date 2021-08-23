@@ -5,6 +5,7 @@ import 'package:spork/helpers/education.dart';
 import 'package:spork/helpers/help.dart';
 import 'package:spork/helpers/projects.dart';
 import 'package:spork/helpers/skills.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -91,7 +92,25 @@ class _MainScreenState extends State<MainScreen> {
         scrollDirection: Axis.vertical,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: _list,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(13.0, 20.0, 0.0, 0.0),
+              child: AnimatedTextKit(
+                displayFullTextOnTap: true,
+                isRepeatingAnimation: false,
+                animatedTexts: [
+                  TyperAnimatedText(
+                      "Welcome to my site fellow humans and bots.\n\nType 'help' to view a list of available commands.",
+                      textStyle: TextStyle(color: Colors.white, fontSize: 16.0),
+                      speed: Duration(milliseconds: 50)),
+                ],
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: _list,
+            ),
+          ],
         ),
       ),
     );

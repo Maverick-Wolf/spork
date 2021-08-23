@@ -15,29 +15,36 @@ class About extends StatelessWidget {
             style: TextStyle(color: Colors.white, fontSize: 16.0),
           ),
           Text(
-            "I have been developing Android/IOS Apps for just over 6 months now and all of these apps have majorly been in Flutter. This portfolio website is my first time playing around with flutter web.",
-            style: TextStyle(color: Colors.white70, fontSize: 16.0),
-          ),
-          Text(
-            "I am also the Creator and Co-Founder of a Discord bot called Emote Handler which currently is in over 1500 servers and has a userbase of over 700k+ users.",
+            "I have been developing Android/IOS Apps for just over 6 months now and all of these apps have majorly been in Flutter.\nI have also been playing around with FLutter Web for few months now and have made some websites using that too.",
             style: TextStyle(color: Colors.white, fontSize: 16.0),
           ),
           RichText(
             text: TextSpan(
               text:
                   "Right now I'm in my Second year of undergraduate degree at",
-              style: TextStyle(color: Colors.white70, fontFamily: "Cour", fontSize: 16.0),
+              style: TextStyle(
+                  color: Colors.white, fontFamily: "Cour", fontSize: 16.0),
               children: [
                 TextSpan(
                     text: " Birla Institue of Technology and Science, Pilani",
-                    style: TextStyle(color: Colors.white, fontFamily: "Cour", fontSize: 16.0)),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Cour",
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600)),
                 TextSpan(
                     text: " doing my",
-                    style:
-                        TextStyle(color: Colors.white70, fontFamily: "Cour", fontSize: 16.0)),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Cour",
+                        fontSize: 16.0)),
                 TextSpan(
                     text: "  Engineering in Electronics.",
-                    style: TextStyle(color: Colors.white, fontFamily: "Cour", fontSize: 16.0)),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Cour",
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600)),
               ],
             ),
           ),
