@@ -102,7 +102,7 @@ class _MainScreenState extends State<MainScreen> {
                   TyperAnimatedText(
                       "Welcome to my site fellow humans and bots.\n\nType 'help' to view a list of available commands.",
                       textStyle: TextStyle(color: Colors.white, fontSize: 16.0),
-                      speed: Duration(milliseconds: 50)),
+                      speed: Duration(milliseconds: 37)),
                 ],
               ),
             ),

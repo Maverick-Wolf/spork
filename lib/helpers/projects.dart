@@ -1,6 +1,26 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class Projects extends StatelessWidget {
+class Projects extends StatefulWidget {
+  @override
+  _ProjectsState createState() => _ProjectsState();
+}
+
+class _ProjectsState extends State<Projects> {
+  late TapGestureRecognizer _tapGestureRecognizer;
+  @override
+  void initState() {
+    super.initState();
+    _tapGestureRecognizer = TapGestureRecognizer();
+  }
+
+  @override
+  void dispose() {
+    _tapGestureRecognizer.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,6 +34,13 @@ class Projects extends StatelessWidget {
             children: [
               TextSpan(
                 text: "link",
+                recognizer: _tapGestureRecognizer
+                  ..onTap = () async {
+                    String _url = "https://github.com/Maverick-Wolf";
+                    await canLaunch(_url)
+                        ? await launch(_url)
+                        : throw 'Could not launch $_url';
+                  },
                 style: TextStyle(
                     color: Color(0xFFFFA500),
                     decoration: TextDecoration.underline,
@@ -27,6 +54,13 @@ class Projects extends StatelessWidget {
               ),
               TextSpan(
                 text: "Emote Handler",
+                recognizer: _tapGestureRecognizer
+                  ..onTap = () async {
+                    String _url = "https://top.gg/bot/828861323353915422";
+                    await canLaunch(_url)
+                        ? await launch(_url)
+                        : throw 'Could not launch $_url';
+                  },
                 style: TextStyle(
                     color: Color(0xFFFFA500),
                     decoration: TextDecoration.underline,
@@ -46,6 +80,13 @@ class Projects extends StatelessWidget {
               ),
               TextSpan(
                 text: "Discord Api",
+                recognizer: _tapGestureRecognizer
+                  ..onTap = () async {
+                    String _url = "https://discord.com/developers/docs/intro";
+                    await canLaunch(_url)
+                        ? await launch(_url)
+                        : throw 'Could not launch $_url';
+                  },
                 style: TextStyle(
                     color: Color(0xFFFFA500),
                     decoration: TextDecoration.underline,
