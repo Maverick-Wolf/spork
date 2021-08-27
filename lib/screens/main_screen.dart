@@ -30,12 +30,25 @@ class _MainScreenState extends State<MainScreen> {
       text = Skills();
     } else {
       text = Padding(
-        padding: const EdgeInsets.fromLTRB(13.0, 0.0, 0.0, 0.0),
-        child: Text("Command not found: $value.",
-            style: TextStyle(
-                color: Colors.red[600],
-                fontSize: 16.0,
-                fontWeight: FontWeight.w600)),
+        padding: const EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Command not found: $value.",
+                style: TextStyle(
+                    color: Colors.red[600],
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w600)),
+            SizedBox(
+              height: 5.0,
+            ),
+            Text(
+              "Type 'help' to view a list of available commands.",
+              style: TextStyle(
+                  color: Colors.white, fontFamily: "Cour", fontSize: 15.5),
+            )
+          ],
+        ),
       );
     }
     return text;
@@ -43,7 +56,7 @@ class _MainScreenState extends State<MainScreen> {
 
   addTextField() {
     return Padding(
-      padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
+      padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
       child: TextField(
         key: UniqueKey(),
         style: TextStyle(color: Colors.white, fontSize: 16.0),
@@ -51,6 +64,7 @@ class _MainScreenState extends State<MainScreen> {
         cursorHeight: 18.0,
         autofocus: true,
         showCursor: true,
+        // onEditingComplete: () {},
         onSubmitted: (value) {
           Widget text = outputText(value);
           setState(() {
@@ -69,11 +83,17 @@ class _MainScreenState extends State<MainScreen> {
             errorBorder: InputBorder.none,
             disabledBorder: InputBorder.none,
             prefixIcon: Padding(
-                padding: EdgeInsets.all(7.5),
+                padding: EdgeInsets.fromLTRB(0.0, 9.0, 0.0, 0.0),
                 child: Text(
                   'code@never:~# ',
-                  style: TextStyle(color: Color(0xFF00CD00), fontSize: 16.0),
-                ))),
+                  style: TextStyle(
+                      color: Color(0xFF00CD00),
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600),
+                ))
+            // prefixText: "code@never:~# ",
+            // prefixStyle: TextStyle(color: Color(0xFF00CD00), fontSize: 16.0),
+            ),
       ),
     );
   }
@@ -94,7 +114,15 @@ class _MainScreenState extends State<MainScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(13.0, 20.0, 0.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(13.0, 23.0, 0.0, 0.0),
+              child: Text(
+                "<Rachit Chaudhary />",
+                style: TextStyle(
+                    color: Colors.white, fontFamily: "Fuggles", fontSize: 65.0),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20.0, 15.0, 0.0, 0.0),
               child: AnimatedTextKit(
                 displayFullTextOnTap: true,
                 isRepeatingAnimation: false,

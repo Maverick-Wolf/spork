@@ -24,7 +24,7 @@ class _EducationState extends State<Education> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(13.0, 0.0, 0.0, 0.0),
+      padding: const EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

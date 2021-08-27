@@ -66,6 +66,10 @@ flutter:
     - family: Cour
       fonts:
         - asset: fonts/cour.ttf
+
+    - family: Fuggles
+      fonts:
+        - asset: fonts/Fuggles-Regular.ttf
     
   #
   # For details regarding fonts from package dependencies,

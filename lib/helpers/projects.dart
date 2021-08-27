@@ -24,7 +24,7 @@ class _ProjectsState extends State<Projects> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(13.0, 0.0, 0.0, 0.0),
+      padding: const EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
       child: RichText(
         text: TextSpan(
             text:
